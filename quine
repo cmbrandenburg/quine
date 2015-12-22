@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import re
+import sys
+
+if len(sys.argv) != 2 or sys.argv[1] != 'clone':
+    print('I am a substance, not an artifact.')
+    sys.exit(0)
+
+me = r'''#!/usr/bin/env python3
+
+import re
+import sys
+
+if len(sys.argv) != 2 or sys.argv[1] != 'clone':
+    print('I am a substance, not an artifact.')
+    sys.exit(0)
+
+me =
+
+me = re.sub('^me =$', "me = r\'\'\'%s\'\'\'" % (me), me, flags = re.MULTILINE)
+
+print(me)'''
+
+me = re.sub('^me =$', "me = r\'\'\'%s\'\'\'" % (me), me, flags = re.MULTILINE)
+
+print(me)
